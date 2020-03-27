@@ -2,26 +2,28 @@ version: "3"
  
 services:
   miservicio_mysql:
-    image: mariadb
+    image: mariadb/server:10.4
+    restart: always
     environment:
       - MYSQL_DATABASE=ejemplo
       - MYSQL_ROOT_PASSWORD=atun0227
       - MYSQL_USER=hanna
       - MYSQL_PASSWORD=atun0227
+    ports:
+      - 3306:3306
     volumes:
-      - ./volumenes/mysql:/var/lib/mysql
+      - ./db/files:/var/lib/mysql
       - "./db/config:/etc/mysql/conf.d"
     expose:
       - 3306
-    ports:
-      - 3306:3306
    
   miservicio_php:
     image: webdevops/php-apache
     
     volumes:
       
-      - ./flerky/:/var/www/html
+    #  - ./flerky/:/var/www/html
+    - "./home/repos_linux/dockerexample:/home/repos_linux/dockerexample"
     expose:
       - 80
     ports:
