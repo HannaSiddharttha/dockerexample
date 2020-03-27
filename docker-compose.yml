@@ -1,0 +1,30 @@
+version: "3"
+ 
+services:
+  miservicio_mysql:
+    image: mariadb
+    environment:
+      - MYSQL_DATABASE=ejemplo
+      - MYSQL_ROOT_PASSWORD=atun0227
+      - MYSQL_USER=hanna
+      - MYSQL_PASSWORD=atun0227
+    volumes:
+      - ./volumenes/mysql:/var/lib/mysql
+      - "./db/config:/etc/mysql/conf.d"
+    expose:
+      - 3306
+    ports:
+      - 3306:3306
+   
+  miservicio_php:
+    image: webdevops/php-apache
+    
+    volumes:
+      
+      - ./flerky/:/var/www/html
+    expose:
+      - 80
+    ports:
+      - 80:80
+    links: 
+      - miservicio_mysql
