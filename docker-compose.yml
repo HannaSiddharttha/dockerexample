@@ -23,7 +23,8 @@ services:
     volumes:
       
     #  - ./flerky/:/var/www/html
-    - "./home/repos_linux/dockerexample:/home/repos_linux/dockerexample"
+    - ./flerky:/var/www/html
+    #- "./home/repos_linux/dockerexample:/home/repos_linux/dockerexample"
     expose:
       - 80
     ports:
