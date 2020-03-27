@@ -20,8 +20,8 @@ class Alumno extends CI_Model {
     $this->load->helper("url");
     $data = array('nombre'=>$this->input->post("nombre"),
     'creditos'=>$this->input->post("creditos"),
-    'semestre'=>$this->input->post("semestre")
-    'folio'=>$this->input->post("folio"));
+    'semestre'=>$this->input->post("semestre"),
+    'folio'=>$this->input->post("folio"),);
 
     return $this->db->insert("alumnos",$data);
   }
