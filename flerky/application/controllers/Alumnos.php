@@ -27,7 +27,7 @@ class Alumnos extends CI_Controller{
   }
 
   public function insert2() {
-    $this->Alumno->insertar($id);
+    $this->Alumno->insertar();
     redirect(base_url()."alumnos");
   }
 
