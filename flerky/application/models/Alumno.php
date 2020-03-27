@@ -29,7 +29,7 @@ class Alumno extends CI_Model {
   public function actualizar($id=null){
     $data = ['nombre'=>$this->input->post("nombre"),
     'creditos'=>$this->input->post("creditos"),
-    'semestre'=>$this->input->post("semestre")
+    'semestre'=>$this->input->post("semestre"),
     'folio'=>$this->input->post("folio")];
     $this->db->where("id",$this->input->post("id"));
     return $this->db->update("alumnos",$data);
