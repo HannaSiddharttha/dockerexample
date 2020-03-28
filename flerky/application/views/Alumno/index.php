@@ -9,7 +9,10 @@
   <body>
   <center>
   <font color="#545454"size="10" face="Century Gothic">
-    <h1>Subjets Information</h1>
+    <h1>Students Information</h1>
+
+
+    
     </font>
     </center>
     <center>
